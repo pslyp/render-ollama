@@ -1,4 +1,5 @@
 FROM ollama/ollama
 EXPOSE 11434
-RUN ollama pull phi
-CMD ["ollama", "serve"]
+RUN ollama serve & \
+    sleep 5 && \
+    ollama pull tinyllama
